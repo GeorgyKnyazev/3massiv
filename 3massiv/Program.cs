@@ -9,7 +9,7 @@ namespace _3massiv
             Random random = new Random();
             int maxNumberInRandom = 100;
             int minNumberInRandom = 10;
-            int[] localArray = new int[30];
+            int[] localArray = new int[2];
             
             for (int i = 0; i < localArray.Length; i++)
             {
@@ -25,15 +25,12 @@ namespace _3massiv
                     Console.Write(localArray[0] + " ");
                 }
 
-                for (int i = 0; i < localArray.Length - 1; i++)
+                for (int i = 1; i < localArray.Length - 2; i++)
                 {
-                    if (i > 0 && i < localArray.Length - 1)
-                    {
                         if (localArray[i] > localArray[i - 1] && localArray[i] > localArray[i + 1])
                         {
                             Console.Write(localArray[i] + " ");
                         }
-                    }
                 }
                 if (localArray[localArray.Length - 1] > localArray[localArray.Length - 2])
                 {
