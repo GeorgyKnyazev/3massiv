@@ -18,29 +18,31 @@ namespace _3massiv
             }
             Console.WriteLine();
 
-            for (int i = 0; i < localArray.Length - 1; i++)
+            if (localArray.Length > 1)
             {
-                if (i == 0)
+                if (localArray[0] > localArray[1])
                 {
-                    if (localArray[i] > localArray[i + 1])
+                    Console.Write(localArray[0] + " ");
+                }
+
+                for (int i = 0; i < localArray.Length - 1; i++)
+                {
+                    if (i > 0 && i < localArray.Length - 1)
                     {
-                        Console.Write(localArray[i] + " ");
+                        if (localArray[i] > localArray[i - 1] && localArray[i] > localArray[i + 1])
+                        {
+                            Console.Write(localArray[i] + " ");
+                        }
                     }
                 }
-                else if (i > 0 && i < localArray.Length - 1)
+                if (localArray[localArray.Length - 1] > localArray[localArray.Length - 2])
                 {
-                    if (localArray[i] > localArray[i - 1] && localArray[i] > localArray[i + 1])
-                    {
-                        Console.Write(localArray[i] + " ");
-                    }
+                    Console.Write(localArray[localArray.Length - 1]);
                 }
-                else if (i == localArray.Length - 1)
-                {
-                    if(localArray[i] > localArray[i - 1])
-                    {
-                        Console.Write(localArray[i]);
-                    }
-                }
+            }
+            else
+            {
+                Console.WriteLine(localArray[0]);
             }
         }
     }
